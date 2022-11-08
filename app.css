@@ -1,0 +1,388 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+:root {
+  --Strongcyan: hsl(172, 67%, 45%);
+  --Verydarkcyan: hsl(183, 100%, 15%);
+  --Darkgrayishcyan: hsl(186, 14%, 43%);
+  --Grayishcyan: hsl(184, 14%, 56%);
+  --Lightgrayishcyan: hsl(185, 41%, 84%);
+  --Verylightgrayishcyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--Lightgrayishcyan);
+  font-family: "Space Mono", monospace;
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.splitter {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  color: var(--Darkgrayishcyan);
+  letter-spacing: 0.3em;
+  font-size: 1.8rem;
+}
+
+.tip-container {
+  width: 60em;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 1em;
+  padding: 2em 3em;
+}
+
+.bill-container {
+  width: 48%;
+  padding: 1em 0;
+}
+
+.bill-c p {
+  color: var(--Darkgrayishcyan);
+}
+
+.bill-c input {
+  text-align: right;
+  background-color: var(--Verylightgrayishcyan);
+  background-image: url(images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  background-position: 1em;
+  width: 90%;
+  height: 2.5em;
+  padding: 0em 1em;
+  border: none;
+  border-radius: 0.2em;
+  outline-color: var(--Strongcyan);
+  font-family: inherit;
+  font-size: 1.3rem;
+  color: var(--Verydarkcyan);
+  cursor: pointer;
+}
+
+.bill-c input::placeholder {
+  font-size: 1.3rem;
+  color: var(--Grayishcyan);
+}
+.person-c {
+  position: relative;
+}
+
+.person-c p {
+  color: var(--Darkgrayishcyan);
+}
+
+.person-c .error {
+  position: absolute;
+  right: 10%;
+  top: 0;
+  font-size: 0.8em;
+  color: red;
+}
+
+.hide {
+  display: none;
+}
+
+.person-c input {
+  text-align: right;
+  background-color: var(--Verylightgrayishcyan);
+  background-image: url(images/icon-person.svg);
+  background-repeat: no-repeat;
+  background-position: 1em;
+  width: 90%;
+  height: 2.5em;
+  padding: 0em 1em;
+  border: none;
+  border-radius: 0.2em;
+  outline-color: var(--Strongcyan);
+  font-family: inherit;
+  font-size: 1.3rem;
+  color: var(--Verydarkcyan);
+  cursor: pointer;
+}
+
+.person-c input::placeholder {
+  font-size: 1.3rem;
+  color: var(--Grayishcyan);
+}
+
+.select-tip-container {
+  margin: 2em auto;
+}
+
+.select-tip-container > p {
+  color: var(--Darkgrayishcyan);
+}
+
+.select-tip {
+  display: grid;
+  grid-template-columns: repeat(3, 7em);
+  grid-auto-rows: 3em;
+  gap: 10px;
+  text-align: center;
+}
+
+.tip-percentage {
+  display: block;
+  width: 6em;
+  height: 2.5em;
+  line-height: 2.5em;
+  background-color: var(--Verydarkcyan);
+  color: white;
+  border-radius: 0.3em;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.tip-percentage:hover {
+  background-color: var(--Lightgrayishcyan);
+  color: var(--Verydarkcyan);
+}
+
+.custom-tip {
+  border: none;
+  background-color: var(--Verylightgrayishcyan);
+  font-size: 1.2rem;
+  font-family: inherit;
+  color: var(--Verydarkcyan);
+  padding: 0.5em;
+  cursor: pointer;
+  outline-color: var(--Strongcyan);
+}
+
+.custom-tip::placeholder {
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--Darkgrayishcyan);
+}
+
+.tip-total-container {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--Verydarkcyan);
+  padding: 3em 3em 2em;
+  border-radius: 1em;
+}
+
+.tip-amount-c {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0em 0 2em;
+}
+.total-c {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tip-details span,
+.total-details span {
+  color: white;
+}
+
+.tip-details p,
+.total-details p {
+  color: var(--Grayishcyan);
+  font-size: 0.9rem;
+}
+
+.tip-amount,
+.total {
+  font-size: 2.8rem;
+  color: var(--Strongcyan);
+}
+
+.reset {
+  display: block;
+  text-align: center;
+  padding: 0.8em 2em;
+  background-color: var(--Strongcyan);
+
+  color: var(--Verydarkcyan);
+  border-radius: 0.3em;
+}
+
+.reset:hover {
+  background-color: var(--Lightgrayishcyan);
+}
+
+.active {
+  background-color: rgb(3, 121, 128);
+}
+
+@media screen and (min-width: 750px) and (max-width: 1000px) {
+  .tip-container {
+    width: 45em;
+  }
+
+  .select-tip {
+    grid-template-columns: repeat(3, 4.8em);
+    grid-auto-rows: 3em;
+    gap: 20px;
+  }
+
+  .tip-percentage {
+    width: 4em;
+  }
+
+  .custom-tip::placeholder {
+    font-size: 1rem;
+  }
+
+  .tip-total-container {
+    padding: 3em 2em 2em;
+  }
+
+  .tip-amount,
+  .total {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 50px) and (max-width: 750px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    height: 100%;
+  }
+
+  main {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    transform: translate(0, -0);
+  }
+
+  .splitter {
+    position: relative;
+    text-align: center;
+    top: 0%;
+    left: 0%;
+    transform: translate(0%, 0%);
+    color: var(--Darkgrayishcyan);
+    letter-spacing: 0.3em;
+    font-size: 1.5rem;
+    margin-top: 1em;
+  }
+
+  .tip-container {
+    width: 25em;
+    margin: 2em auto 5em;
+    display: block;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 1em;
+    padding: 2em;
+  }
+
+  .bill-container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 1em 0;
+    margin-bottom: 1em;
+  }
+
+  .bill-c input {
+    width: 100%;
+  }
+
+  .bill-c input::placeholder {
+    font-size: 1.3rem;
+    color: var(--Grayishcyan);
+  }
+
+  .person-c p {
+    color: var(--Darkgrayishcyan);
+  }
+
+  .person-c input {
+    width: 100%;
+  }
+
+  .person-c input::placeholder {
+    font-size: 1.3rem;
+  }
+
+  .select-tip {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-auto-rows: 4em;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .tip-percentage {
+    width: 7.8em;
+  }
+
+  .custom-tip {
+    width: 7.8em;
+    height: 2.5em;
+    border-radius: 0.3em;
+  }
+
+  .tip-total-container {
+    width: 100%;
+    padding: 2em 1em 1.5em;
+    border-radius: 1em;
+  }
+
+  .tip-amount-c {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0em 0 2em;
+  }
+  .total-c {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0em 0 2em;
+  }
+
+  .tip-details p,
+  .total-details p {
+    color: var(--Grayishcyan);
+    font-size: 0.9rem;
+  }
+
+  .tip-amount,
+  .total {
+    font-size: 2rem;
+    color: var(--Strongcyan);
+  }
+}
+
+@media screen and (min-width: 50px) and (max-width: 375px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 50px) and (max-width: 320px) {
+  html {
+    font-size: 10px;
+  }
+}
