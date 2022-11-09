@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="app.css" />
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <main>
+      <h1 class="splitter">SPLI<br />TTER</h1>
+      <div class="tip-container">
+        <div class="bill-container">
+          <div class="bill-c">
+            <p>Bill</p>
+            <input type="text" id="bill" name="bill" placeholder="0" />
+          </div>
+          <div class="select-tip-container">
+            <p>Select Tip %</p>
+            <div class="select-tip">
+              <span class="tip-percentage tip-5">5%</span>
+              <span class="tip-percentage tip-10">10%</span>
+              <span class="tip-percentage tip-15">15%</span>
+              <span class="tip-percentage tip-25">25%</span>
+              <span class="tip-percentage tip-50">50%</span>
+              <input type="text" class="custom-tip" placeholder="custom" />
+            </div>
+          </div>
+          <div class="person-c">
+            <p>Number of People</p>
+            <p class="error hide">can't be zero</p>
+            <input type="text" id="person" name="person" placeholder="0" />
+          </div>
+        </div>
+        <div class="tip-total-container">
+          <div class="tip-total-c">
+            <div class="tip-amount-c">
+              <div class="tip-details">
+                <span>Tip Amount</span>
+                <p>/ Person</p>
+              </div>
+              <h1 class="tip-amount">$0.00</h1>
+            </div>
+            <div class="total-c">
+              <div class="total-details">
+                <span>Total</span>
+                <p>/ Person</p>
+              </div>
+              <h1 class="total">$0.00</h1>
+            </div>
+          </div>
+          <a class="reset" href="#">RESET</a>
+        </div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
