@@ -216,8 +216,7 @@ main {
   display: block;
   text-align: center;
   padding: 0.8em 2em;
-  background-color: var(--Strongcyan);
-
+ background-color: rgb(3, 121, 128);
   color: var(--Verydarkcyan);
   border-radius: 0.3em;
 }
@@ -227,7 +226,8 @@ main {
 }
 
 .active {
-  background-color: rgb(3, 121, 128);
+  background-color: var(--Strongcyan);
+ 
 }
 
 @media screen and (min-width: 750px) and (max-width: 1000px) {
