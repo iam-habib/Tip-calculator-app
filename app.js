@@ -90,17 +90,13 @@ person.addEventListener("input", function () {
       error.classList.remove("hide");
     } else if (person.value > 0) {
       error.classList.add("hide");
+      total.textContent = `$${(Number(bill.value) / person.value).toFixed(2)}`;
       tipPercentages.forEach((tipPercentage) => {
         if (tipPercentage.classList.contains("active")) {
           tipCal();
-        } else if (!tipPercentage.classList.contains("active")) {
-          if (custom.value > 0) {
-            customTipCal();
-          } else {
-            total.textContent = `$${(Number(bill.value) / person.value).toFixed(
-              2
-            )}`;
-          }
+          console.log();
+        } else if (custom.value > 0) {
+          customTipCal();
         }
       });
     }
@@ -117,7 +113,6 @@ custom.addEventListener("input", function () {
   } else if (custom.value > 0) {
     error.classList.add("hide");
     customTipCal();
-    total.textContent = `$0.00`;
     if (person.value === "") {
       error.classList.remove("hide");
       total.textContent = `$0.00`;
@@ -140,7 +135,6 @@ custom.addEventListener("click", function () {
   } else if (custom.value > 0) {
     error.classList.add("hide");
     customTipCal();
-    total.textContent = `$0.00`;
     if (person.value === "") {
       error.classList.remove("hide");
       total.textContent = `$0.00`;
