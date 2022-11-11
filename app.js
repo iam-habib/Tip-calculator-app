@@ -104,30 +104,12 @@ person.addEventListener("input", function () {
 });
 
 custom.addEventListener("input", function () {
-  if (custom.value === "") {
-    total.textContent = `$0.00`;
-  } else if (bill.value === "") {
-    tipAmount.textContent = `$0.00`;
-    total.textContent = `$0.00`;
-    error.classList.add("hide");
-  } else if (custom.value > 0) {
-    error.classList.add("hide");
-    customTipCal();
-    if (person.value === "") {
-      error.classList.remove("hide");
-      total.textContent = `$0.00`;
-    } else if (person.value > 0) {
-      error.classList.add("hide");
-    }
-  }
-});
-
-custom.addEventListener("click", function () {
   tipPercentages.forEach((tipPercentage) => {
     tipPercentage.classList.remove("active");
   });
   if (custom.value === "") {
-    total.textContent = `$0.00`;
+    tipAmount.textContent = `$0.00`;
+    total.textContent = `$${(Number(bill.value) / person.value).toFixed(2)}`;
   } else if (bill.value === "") {
     tipAmount.textContent = `$0.00`;
     total.textContent = `$0.00`;
